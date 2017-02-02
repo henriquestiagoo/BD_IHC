@@ -1,0 +1,40 @@
+REQUISITOS:
+
+Considere um Sistema de Gestão de uma cadeia de Hotéis com as seguintes características:
+-Pessoa é caracterizada por: id, data nascimento, e-mail, primeiro e ultimo nome, endereço, sexo,nº telefone, código postal
+-Cliente e Funcionários são Pessoas, um funcionário pode ser um cliente e vice versa.
+-Um Funcionário é caracterizado pelo salário e trabalha num hotel.
+-Um cliente pode fazer várias reservas.
+-Uma reserva é caracterizada por: id, numero de pessoas, datas de início e fim da estadia.
+-Uma reserva só permite a requisição de um quarto.
+-Um Cliente pode escolher um tipo de Pensão que vai estar associado à sua reserva.
+-O tipo de pensão assume certos valores com um significado local (0-SA(Apenas Alojamento), 1-APA(Alojamento e pequeno-almoço), 2-PC(Pensão completa, alojamento, pequeno-almoço, almoço e jantar).
+-Uma reserva é registada pelo recepcionista que estiver a trabalhar no momento da efetuação da reserva.
+-Um pagamento está associado a uma reserva, que é caracterizado por: id, custo total a pagar, método de pagamento e data. 
+-O Pagamento só é efetuado no momento de checkout do cliente.
+-O pagamento é registado pelo recepcionista que estiver a trabalhar no momento do pagamento por parte do cliente.
+-Os preços da reserva dependem da temporada em que incide a estadia.
+-As temporadas são caracterizadas por: id, data de começo e termino, razão e os preços de todos os tipos de quartos que são possíveis reservar (simples, duplo, etc.)
+-Uma reserva pode ter um conjunto de serviços associados.
+-Os Serviços são caracterizados por: id, custo e data de requisição.
+-Existem diversos tipos de Serviços: RoomService, Restaurante/Bar, Estacionamento, Aluguer de Video e Serviços externos.
+-RoomService caracteriza-se por: hora de consumo e id do produto.
+-Restaurante/Bar caracteriza-se por: tipo e descrição.
+-Estacionamento caracteriza-se por: lugar de estacionamento.
+-Vídeo caracteriza-se por: hora de requisição e id do filme.
+-Serviço externo caracteriza-se por: descrição do serviço externo e tipo de serviço externo(1- aluguer de carros, 2- excursões, 3- serviços de baby-sitting, 4- espetáculos) 
+-A gestão dos Serviços é gerida pelo funcionário que estiver de serviço no momento da requisição. Como um cliente pode usufruir de vários serviços, o funcionário a gerir o serviço pode não ser necessariamente sempre o mesmo.
+-Uma reserva solicita a requisição de um quarto disponível no hotel para o tempo de estadia do cliente.
+-Um Quarto pode estar associado a uma ou mais Reservas em tempos diferentes da estadia dos clientes.
+-Tipo de quarto é caracterizado por um tipo que assume um dos valores seguintes com significado local (1-single, 2-double, 3-twin, 4-mini-suite, 5-suite) e numero máximo de camas extra.
+-Um Quarto é caracterizado por id, se permite fumadores, estado atual (ocupado ou não), nº telefone interno no sistema do hotel.
+-Um Quarto está associado a tipo de quarto.
+-Uma Cama é caracterizada por tipo que assume um dos valores seguintes com significado local (1-single, 2-double, 3-twin, 4-queen, 5-king) e está associada a uma reserva.
+-Podem ser adicionadas Camas a uma reserva específica se assim for desejado/necessário.  
+-Uma cadeia de Hotéis é composta por mais do que um Hotel, em que cada um é caracterizado por código postal, nome, classificação, localização e id
+-Um hotel tem vários quartos.
+-Existem diversos tipo de Funcionario: Recepcionista, Empregado, Supervisor e Gerente.
+-Um Recepcionista tem outro Recepcionista (Advisor) que lhe dá conselhos sobre linhas de trabalho.
+-Gerente gere o hotel onde trabalha e cada hotel só pode ter um gerente.
+-Nenhum funcionário pode ter mais do que uma função(ou é gerente, ou é recepcionista ou é empregado)
+-Um Empregado também tem outro Empregado (Supervisor) que lhe dá conselhos sobre linhas de trabalho e o supervisiona.

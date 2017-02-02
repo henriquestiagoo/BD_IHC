@@ -1,0 +1,19 @@
+Stored Precedures (SP):
+Tratam-se de uma batch armazenadas com um nome.
+Os procedimentos são guardados em memória cache na primeira vez que são executados logo têm
+execução mais rápida.
+SQL Server permite ver a definição (conteúdo) do procedimento e existe a opção de cifrar 
+o conteúdo do SP.
+São utilizadas para restringir as ações dos utilizadores da base de dados através da criação de
+stored procedures para inserts, updates e deletes. 
+Portanto, uma Stored Procedure tem menos probabilidades de conter erros de integridade de informação e
+é mais fácil de testar independentemente do que código SQL ad hoc.
+Permite TRY...CATCH ou RAISERROR.
+
+User Defined Functions (UDF):
+Os mesmos benefícios dos Stored procedures e podem ser utilizadas para incorporar lógica 
+complexa dentro de uma consulta.
+Oferecem os mesmo benefícios das vistas pois podem ser utilizados como fonte de 
+dados (cláusula FROM das consultas).
+Criação de novas funções contendo expressões complexas.
+Não permite TRY...CATCH ou RAISERROR.

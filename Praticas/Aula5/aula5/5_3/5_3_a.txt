@@ -1,0 +1,8 @@
+-- 5.3-a)
+-- Lista de pacientes que nunca tiveram uma prescrição; 
+
+π nome,numUtentePa,dataNasc,endereco (σ numPresc=null (ρ numUtentePa←numUtente paciente⟕(numUtentePa=numUtentePr) ρ numUtentePr←numUtente prescricao))
+
+
+
+

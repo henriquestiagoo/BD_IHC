@@ -1,0 +1,21 @@
+
+use p3g4;
+
+INSERT INTO gestaoHotel.Requere VALUES ('single',1,0)
+INSERT INTO gestaoHotel.Requere VALUES ('single',2,1)
+INSERT INTO gestaoHotel.Requere VALUES ('double',2,1)
+INSERT INTO gestaoHotel.Requere VALUES ('single',11,2)
+INSERT INTO gestaoHotel.Requere VALUES ('single',5,2)
+INSERT INTO gestaoHotel.Requere VALUES ('single',6,1)
+INSERT INTO gestaoHotel.Requere VALUES ('single',7,1)
+INSERT INTO gestaoHotel.Requere VALUES ('double',12,1)
+INSERT INTO gestaoHotel.Requere VALUES ('double',13,2)
+INSERT INTO gestaoHotel.Requere VALUES ('double',14,1)
+INSERT INTO gestaoHotel.Requere VALUES ('twin',23,1)
+INSERT INTO gestaoHotel.Requere VALUES ('twin',24,2)
+INSERT INTO gestaoHotel.Requere VALUES ('twin',25,1)
+INSERT INTO gestaoHotel.Requere VALUES ('queen',28,1)
+INSERT INTO gestaoHotel.Requere VALUES ('queen',29,2)
+INSERT INTO gestaoHotel.Requere VALUES ('queen',30,1)
+INSERT INTO gestaoHotel.Requere VALUES ('king',35,1)
+INSERT INTO gestaoHotel.Requere VALUES ('king',39,1)

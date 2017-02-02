@@ -1,0 +1,7 @@
+
+-- 5.1-f)
+γ Dname; avg_Salary_Feminine←avg(Salary) (σ Sex='F' (employee⨝(Dno=Dnumber) department))
+
+
+
+

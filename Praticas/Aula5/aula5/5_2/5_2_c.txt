@@ -1,0 +1,5 @@
+-- 5.2-c)  
+-- Número médio de produtos por encomenda; (nota: não interessa o número de unidades);
+
+γ media_prod_enc←avg(num_enc_prod) (γ numEnc; num_enc_prod←count(numEnc) item)
+

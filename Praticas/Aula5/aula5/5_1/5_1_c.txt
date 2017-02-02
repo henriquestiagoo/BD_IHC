@@ -1,0 +1,3 @@
+-- 5.1-c)
+temp = π Pname,Hours (project ⨝(Pnumber=Pno) works_on)
+γ Pname; Nr_Hours←sum(Hours) (temp)

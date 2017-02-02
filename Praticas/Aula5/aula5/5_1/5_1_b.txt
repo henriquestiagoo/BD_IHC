@@ -1,0 +1,3 @@
+-- 5.1-b)
+temp = ρ  S_Ssn←Ssn (π Ssn (σ (Fname='Carlos' and Minit='D' and Lname='Gomes') (employee)))
+π Fname,Minit,Lname (employee ⨝(Super_ssn=S_Ssn) temp)

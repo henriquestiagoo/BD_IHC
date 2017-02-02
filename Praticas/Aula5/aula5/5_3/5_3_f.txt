@@ -1,0 +1,4 @@
+-- 5.3-f)
+-- Pacientes que tiveram prescrições de médicos diferentes;
+
+paciente⨝(π numUtente (σ prescricoes>1 (γ numUtente; prescricoes←count(numMedico) (π numUtente,numMedico,numPresc prescricao))))

@@ -1,0 +1,43 @@
+
+
+use p3g4;
+
+INSERT INTO gestaoHotel.Reserva VALUES (1, 4, 'SA', '2015-9-20', '2015-10-22', 7, 118, 14, 35);
+INSERT INTO gestaoHotel.Reserva VALUES (2, 1, 'APA', '2015-10-23', '2016-11-02', 8, 104, 13, 33);
+INSERT INTO gestaoHotel.Reserva VALUES (3, 3, 'APA', '2016-02-16', '2016-08-05', 5, 101, 13, 36);
+INSERT INTO gestaoHotel.Reserva VALUES (4, 3, 'APA', '2015-08-13', '2016-01-27', 10, 108, 13, 30);
+INSERT INTO gestaoHotel.Reserva VALUES (5, 2, 'APA', '2016-01-21', '2016-07-21', 15, 107, 10, 33);
+INSERT INTO gestaoHotel.Reserva VALUES (6, 3, 'APA', '2015-12-01', '2016-03-05', 1, 113, 10, 34);
+INSERT INTO gestaoHotel.Reserva VALUES (7, 5, 'APA', '2015-12-15', '2015-12-25', 5, 101, 12, 34);
+INSERT INTO gestaoHotel.Reserva VALUES (8, 1, 'APA', '2016-01-25', '2016-02-12', 4, 110, 13, 31);	
+INSERT INTO gestaoHotel.Reserva VALUES (9, 5, 'APA', '2015-07-07', '2016-04-06', 13, 119, 13, 33);
+INSERT INTO gestaoHotel.Reserva VALUES (10, 5, 'SA', '2015-11-26', '2015-12-02', 15, 105, 14, 30);
+INSERT INTO gestaoHotel.Reserva VALUES (11, 2, 'SA', '2015-07-11', '2015-09-11', 6, 101, 12, 33);
+INSERT INTO gestaoHotel.Reserva VALUES (12, 5, 'SA', '2015-10-15', '2015-11-06', 9, 118, 10, 35);
+INSERT INTO gestaoHotel.Reserva VALUES  (13, 2, 'SA', '2015-12-19', '2016-05-19', 2, 120, 11, 30);
+INSERT INTO gestaoHotel.Reserva VALUES (14, 3, 'SA', '2015-05-01', '2015-08-05', 13, 116, 10, 34);
+INSERT INTO gestaoHotel.Reserva VALUES (15, 4, 'SA', '2015-05-27', '2015-09-03', 13, 115, 10, 35);
+INSERT INTO gestaoHotel.Reserva VALUES  (16, 4, 'SA', '2016-02-21', '2016-12-13', 12, 112, 10, 36);
+INSERT INTO gestaoHotel.Reserva VALUES (17, 5, 'SA', '2016-01-19', '2016-07-10', 5, 116, 11, 34);
+INSERT INTO gestaoHotel.Reserva VALUES (18, 1, 'SA', '2015-08-21', '2016-03-02', 14, 110, 14, 34);
+INSERT INTO gestaoHotel.Reserva VALUES (19, 5, 'SA', '2015-1-14', '2015-08-16', 1, 101, 13, 36);
+INSERT INTO gestaoHotel.Reserva VALUES (20, 1, 'SA', '2015-10-2', '2015-10-07', 11, 107, 12, 33);	
+INSERT INTO gestaoHotel.Reserva VALUES (21, 4, 'SA', '2016-03-02', '2016-03-17', 9, 119, 14, 35);
+INSERT INTO gestaoHotel.Reserva VALUES (22, 4, 'SA', '2015-04-25', '2015-12-14', 6, 120, 14, 36);
+INSERT INTO gestaoHotel.Reserva VALUES  (23, 5, 'SA', '2015-05-08', '2015-07-14', 11, 115, 13, 32);	
+INSERT INTO gestaoHotel.Reserva VALUES (24, 3, 'SA', '2015-12-19', '2016-03-12', 12, 105, 13, 34);
+INSERT INTO gestaoHotel.Reserva VALUES (25, 4, 'SA', '2015-10-07', '2015-11-21', 15, 109, 11, 36);
+INSERT INTO gestaoHotel.Reserva VALUES (26, 1, 'SA', '2015-10-13', '2015-10-22', 11, 112, 14, 30);
+INSERT INTO gestaoHotel.Reserva VALUES (27, 3, 'SA', '2016-03-12', '2016-10-15', 12, 112, 10, 33);
+INSERT INTO gestaoHotel.Reserva VALUES (28, 5, 'SA', '2015-12-09', '2015-12-27', 4, 118, 13, 30);
+INSERT INTO gestaoHotel.Reserva VALUES (29, 2, 'PC', '2015-07-15', '2015-09-01', 6, 107, 10, 35);
+INSERT INTO gestaoHotel.Reserva VALUES (30, 5, 'PC', '2015-06-03', '2015-07-22', 3, 112, 14, 30);
+INSERT INTO gestaoHotel.Reserva VALUES (31, 5, 'PC', '2015-04-19', '2015-07-28', 2, 107, 10, 31);
+INSERT INTO gestaoHotel.Reserva VALUES (32, 5, 'PC', '2016-03-28', '2016-08-22', 1, 115, 13, 30);
+INSERT INTO gestaoHotel.Reserva VALUES (33, 4, 'PC', '2015-10-05', '2015-12-03', 2, 111, 13, 34);
+INSERT INTO gestaoHotel.Reserva VALUES  (34, 4, 'PC', '2015-12-04', '2015-12-16', 11, 108, 14, 32);
+INSERT INTO gestaoHotel.Reserva VALUES  (35, 3, 'PC', '2016-02-15', '2016-04-20', null, 116, 13, 34);
+INSERT INTO gestaoHotel.Reserva VALUES (36, 5, 'PC', '2015-12-15', '2016-01-14', null, 114, 13, 35);
+INSERT INTO gestaoHotel.Reserva VALUES  (37, 1, 'PC', '2015-12-28', '2016-02-24', null, 110, 13, 31);
+INSERT INTO gestaoHotel.Reserva VALUES  (38, 5, 'PC', '2015-08-05', '2016-01-24', null, 117, 12, 31);
+INSERT INTO gestaoHotel.Reserva VALUES (39, 3, 'PC', '2015-05-26', '2016-01-03', null, 117, 10, 33);

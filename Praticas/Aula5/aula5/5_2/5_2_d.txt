@@ -1,0 +1,4 @@
+-- 5.2-d)  
+-- Lista de produtos (e quantidades) fornecidas por cada fornecedor;
+
+γ nomeF,nif,nomeP,codProd; qt_prod←sum(uni_enc) (π nomeF,nif,nomeP,numEnc,codProd,uni_enc (ρ uni_enc←item.unidades (ρ nomeP←nome produto⨝(codigo=codProd) (π nomeF,nif,numEnc,codProd,unidades (ρ nomeF←fornecedor.nome ((encomenda⨝(fornecedor=nif) fornecedor)⨝(numero=numEnc) item))))))

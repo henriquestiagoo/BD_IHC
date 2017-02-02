@@ -1,0 +1,4 @@
+-- 5.3-b)
+-- Número de prescrições por especialidade médica; 
+
+ γ especialidade; num_presc←count(numPresc) (medico⨝(numSNS=numMedico) prescricao)

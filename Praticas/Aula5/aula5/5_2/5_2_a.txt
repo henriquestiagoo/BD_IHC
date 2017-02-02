@@ -1,0 +1,5 @@
+-- 5.2-a)
+-- Lista dos fornecedores que nunca tiveram encomendas;
+ 
+π nif,nome,fax,endereco,condpag,tipo (σ fornecedor=null (encomenda⟖(fornecedor=nif) fornecedor))
+

@@ -1,0 +1,3 @@
+-- 5.1-a)
+temp = (project ⨝ (Pnumber=Pno) works_on)
+π Pname,Pnumber,Ssn,Fname,Lname (temp ⨝(Essn=Ssn) employee)

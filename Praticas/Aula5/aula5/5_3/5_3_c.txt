@@ -1,0 +1,8 @@
+-- 5.3-c)
+-- Número de prescrições processadas por farmácia;   
+
+γ nome,telefone,endereco; num_presc←count(farmacia) (farmacia⨝(nome=farmacia) prescricao)
+
+
+
+

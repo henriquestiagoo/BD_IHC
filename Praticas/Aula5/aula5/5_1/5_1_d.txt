@@ -1,0 +1,5 @@
+-- 5.1-d)
+temp = σ Pname='Aveiro Digital' (project ⨝(Pnumber=Pno) works_on)
+π Fname,Minit,Lname (σ Dno=3 and Hours>20 (employee⨝(Ssn=Essn) temp))
+
+

@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;\red43\green145\blue175;\red163\green21\blue21;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\ri380
+
+\f0\fs19 \cf0    
+\f1\fs14  \cf2 Private\cf0  \cf2 Sub\cf0  TestDBConnection(\cf2 ByVal\cf0  dbServer \cf2 As\cf0  \cf2 String\cf0 , \cf2 ByVal\cf0  dbName \cf2 As\cf0  \cf2 String\cf0 , \
+\pard\pardeftab720\li2832\fi708\ri380
+\cf2 ByVal\cf0  userName \cf2 As\cf0  \cf2 String\cf0 , \cf2 ByVal\cf0  userPass \cf2 As\cf0  \cf2 String\cf0 )\
+\
+\pard\pardeftab720\ri380
+\cf0         \cf2 Dim\cf0  CN \cf2 As\cf0  \cf2 New\cf0  \cf3 SqlConnection\cf0 (\cf4 "Data Source = "\cf0  + dbServer + \cf4 " ;"\cf0  + \cf4 "Initial Catalog = "\cf0  + dbName + \
+\pard\pardeftab720\li2832\ri380
+\cf4 "; uid = "\cf0  + userName + \cf4 ";"\cf0  + \cf4 "password = "\cf0  + userPass)\
+\pard\pardeftab720\ri380
+\cf0 \
+        \cf2 Try\cf0 \
+            CN.Open()\
+            \cf2 If\cf0  CN.State = \cf3 ConnectionState\cf0 .Open \cf2 Then\cf0 \
+                MsgBox(\cf4 "Successful connection to database "\cf0  + CN.Database + \cf4 " on the "\cf0  + \
+\pard\pardeftab720\li2124\fi708\ri380
+\cf0 CN.DataSource + \cf4 " server"\cf0 , \cf3 MsgBoxStyle\cf0 .OkOnly, \cf4 "Connection Test"\cf0 )\
+\pard\pardeftab720\ri380
+\cf0             \cf2 End\cf0  \cf2 If\cf0 \
+\
+        \cf2 Catch\cf0  ex \cf2 As\cf0  \cf3 Exception\cf0 \
+            MsgBox(\cf4 "FAILED TO OPEN CONNECTION TO DATABASE DUE TO THE FOLLOWING ERROR"\cf0  + \
+\pard\pardeftab720\li2832\ri380
+\cf0 vbCrLf + ex.Message, \cf3 MsgBoxStyle\cf0 .Critical, \cf4 "Connection Test"\cf0 )\
+\pard\pardeftab720\ri380
+\cf0         \cf2 End\cf0  \cf2 Try\cf0 \
+\
+        \cf2 If\cf0  CN.State = \cf3 ConnectionState\cf0 .Open \cf2 Then\cf0  CN.Close()\
+    \cf2 End\cf0  \cf2 Sub\
+\
+\pard\pardeftab720\fi360\ri380
+\cf2 \
+\pard\pardeftab720\ri380
+\cf2     \
+    Private\cf0  \cf2 Function\cf0  GetTableContent(\cf2 ByVal\cf0  CN \cf2 As\cf0  \cf3 SqlConnection\cf0 ) \cf2 As\cf0  \cf2 String\cf0 \
+        \cf2 If\cf0  CN.State = \cf3 ConnectionState\cf0 .Closed \cf2 Then\cf0  \cf2 Return\cf0  \cf4 ""\cf0 \
+\
+        \cf2 Dim\cf0  str \cf2 As\cf0  \cf2 String\cf0  = \cf4 ""\cf0 \
+        \cf2 Dim\cf0  cnt \cf2 As\cf0  \cf2 Integer\cf0  = 1\
+        \cf2 Dim\cf0  sqlcmd \cf2 As\cf0  \cf2 New\cf0  \cf3 SqlCommand\cf0 (\cf4 "SELECT * FROM Hello"\cf0 , CN)\
+        \cf2 Dim\cf0  reader \cf2 As\cf0  \cf3 SqlDataReader\cf0 \
+        reader = sqlcmd.ExecuteReader\
+\
+        \cf2 While\cf0  reader.Read\
+            str += cnt.ToString + \cf4 " - "\cf0  + \cf3 Convert\cf0 .ToString(reader.Item(\cf4 "MsgID"\cf0 )) + \cf4 ", "\cf0 \
+            str += \cf3 Convert\cf0 .ToString(reader.Item(\cf4 "MsgSubject"\cf0 ))\
+            str += vbCrLf\
+            cnt += 1\
+        \cf2 End\cf0  \cf2 While\cf0 \
+\
+        \cf2 Return\cf0  str\
+    \cf2 End\cf0  \cf2 Function\
+}

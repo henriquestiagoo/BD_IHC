@@ -1,0 +1,5 @@
+-- 5.2-b)  
+-- Número médio de unidades encomendadas para cada produto;
+
+γ nome,codigo; Media_encomendas←avg(vendas) (ρ vendas←item.unidades (produto⨝(codigo=codProd) item))
+

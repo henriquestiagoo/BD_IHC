@@ -1,0 +1,4 @@
+
+-- 5.1-h)
+employee ⨝(Ssn=Mgr_ssn) (σ Mgr_ssn != Null and Dependentes=null (department ⟗(Mgr_ssn=Essn) (γ Essn; Dependentes←count(Essn) dependent)))
+

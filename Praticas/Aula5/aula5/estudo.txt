@@ -1,0 +1,61 @@
+﻿-- 5.1- a) Obtenha uma lista contendo os projetos e funcionários (ssn e nome completo) que lá trabalham; 
+
+π Pno, Fname, Minit, Lname, Ssn (works_on⨝(Essn=Ssn) employee)
+
+
+
+
+
+-- 5.1- b) Obtenha o nome de todos os funcionários supervisionados por ‘Carlos D Gomes’;
+π Fname, Lname (employee⨝(Super_ssn=Super) (π Super (ρ Super←Ssn (σ Fname='Carlos' AND Minit='D' AND Lname='Gomes' (employee)))))
+
+-- 5.1- c) Para cada projeto, listar o seu nome e o número de horas (por semana) gastos nesse projeto por todos os funcionários; 
+γ Pname, Pnumber; totalHoras←Sum(Hours) (π Pname,Pnumber, Hours (project ⨝(Pnumber=Pno) works_on))
+
+-- 5.1. d)
+π Fname, Minit, Lname (employee⨝(Ssn=Essn) (σ Pname='Aveiro Digital' AND Dnum=3 AND Hours>20 (works_on⨝(Pno=Pnumber) project)))
+
+-- 5.1- e) Nome dos funcionários que não trabalham para projetos;
+π Fname, Minit, Lname (σ Essn=NULL (employee⟕(Ssn=Essn) works_on))
+
+-- 5.1- f) Para cada departamento, listar o seu nome e o salário médio dos seus funcionários do sexo feminino
+γ Dname, Dnumber; media_sal_fem←avg(Salary) (π Dname, Dnumber, Fname, Lname, Salary (σ Sex='F' (employee⨝(Dno=Dnumber) department)))
+
+-- 5.1- g) Obter uma lista de todos os funcionários com mais do que dois dependentes;
+π Fname, Minit, Lname, dep (σ dep>2 (γ Fname, Minit, Lname, Ssn; dep←Count(Ssn) (employee⨝(Ssn=Essn) dependent)))
+
+-- 5.1- h) Obtenha uma lista de todos os funcionários gestores de departamento que não têm dependentes;
+π Fname, Minit, Lname, Ssn, Dependent_name (σ Essn=null ((employee⨝(Ssn=Mgr_ssn)
+
+-- 5.1- i)
+π Fname, Minit, Lname, Address (employee⨝(Ssn=Essn) (works_on⨝(Pno=Pnumber) (σ Plocation='Aveiro' (project)⨝(Dnum=Dnumber) (σ Dlocation!='Aveiro' (dept_location)))))
+
+-- 5.2- a) Lista dos fornecedores que nunca tiveram encomendas; 
+π nif, nome, fax, endereco (σ fornecedor=null (encomenda⟖(fornecedor=nif) fornecedor))
+
+-- 5.2- b) Número médio de unidades encomendadas para cada produto; 
+γ nome, codigo; num_med_enc←avg(un) (ρ un←unidades item⨝(codProd=codigo) produto)
+
+-- 5.2- c) Número médio de produtos por encomenda; (nota: não interessa o número de unidades); 
+γ media_total←avg(num_prod_enc) (γ numEnc; num_prod_enc←count(numEnc) (item))
+
+-- 5.2- d) Lista de produtos (e quantidades) fornecidas por cada fornecedor;
+γ nomeF,nif,nomeP,codProd; qt_prod←sum(uni_enc) (π nomeF,nif,nomeP,numEnc,codProd,uni_enc (ρ uni_enc←item.unidades (ρ nomeP←nome produto⨝(codigo=codProd) (π nomeF,nif,numEnc,codProd,unidades (ρ nomeF←fornecedor.nome ((encomenda⨝(fornecedor=nif) fornecedor)⨝(numero=numEnc) item))))))
+
+-- 5.3- a) Lista de pacientes que nunca tiveram uma prescrição
+π nome, NU, dataNasc, endereco (σ numUtente=null (ρ NU←numUtente paciente⟕(NU=numUtente) prescricao))
+
+-- 5.3- b) Número de prescrições por especialidade médica;
+γ especialidade; num_presc←count(numPresc) (medico⨝(numSNS=numMedico) prescricao)
+
+-- 5.3- c) Número de prescrições processadas por farmácia;
+ γ nome, telefone, endereco; num_presc_farm←count(numPresc) ((farmacia⨝(nome=farmacia) prescricao))
+
+-- 5.3- d) Para a farmacêutica com registo número 906, lista dos seus fármacos nunca prescritos;
+π farmaco.numRegFarm, farmaco.nome, farmaco.formula (σ farmaco.numRegFarm=906 and nomeFarmaco=null (farmaco⟕(nome=nomeFarmaco) presc_farmaco))
+
+-- 5.3- e) Para cada farmácia, o número de fármacos de cada farmacêutica vendidos; 
+γ farmacia,numRegFarm; num_farm_vendidos←count(numRegFarm) (σ farmacia!=null (π farmacia,numPresc prescricao ⨝(prescricao.numPresc=presc_farmaco.numPresc) presc_farmaco))
+
+-- 5.3- f) Pacientes que tiveram prescrições de médicos diferentes. 
+paciente⨝(σ medicos>1 (γ numUtente; medicos←count(numMedico) (prescricao)))
